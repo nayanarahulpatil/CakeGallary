@@ -10,12 +10,12 @@ function App() {
   var cake1={
     name:"Pound Cake",
     description:"	Sponge cake, cream, food colouring",
-    image:"cake1.jpg"
+    image:"cake3.jpg"
   }
   var cake2={
     name:"Baked Flourless Cake",
     description:"Egg whites, vanilla, and cream of tartar",
-    image:"cake2.jpg"
+    image:"cake1.jpg"
   }
   var cake3={
     name:"Chiffon Cake",
