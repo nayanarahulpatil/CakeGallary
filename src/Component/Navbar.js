@@ -1,8 +1,8 @@
-
+import { Link } from "react-router-dom";
 import { useState } from "react"
 export function Navbar (){
 
-  var [title, settitle]=useState("cake");
+  var [title, settitle]=useState("Cake Gallary");
 
   function btnsearch(e){
   alert("hiii");
@@ -11,10 +11,7 @@ export function Navbar (){
     settitle(inputtitle)
 
   }
-  function btn_addcake_details(){
-
-  }
-
+ 
     return(
     <nav class="navbar navbar-expand-lg ">
     <a class="navbar-brand" href="#" >{title}</a>
@@ -42,14 +39,15 @@ export function Navbar (){
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <Link to="/Addcackedetails" className="btn btn-info mr-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Add Cake Detail</Link>
         </li>
       </ul>
-      <button onClick={btn_addcake_details} class="btn  btn-info mr-2 my-sm-0" >Add Cake Detail</button>
+      
       <form class="form-inline my-2 my-lg-0">
         <input id="inputsearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
         <button onClick={btnsearch} class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
       </form>
+     <Link to="/Signup"  className="btn btn-info  ml-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Sign up</Link>
     </div>
   </nav>
   )
