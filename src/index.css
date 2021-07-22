@@ -9,6 +9,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html {
+  font-size: 1rem;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -22,4 +25,28 @@ background-color: #f4f6fa;
 }
 .form-group{
 margin-top: 1.5rem;
+}
+.maincakedetails{
+  background-color: #eae7dc;
+}
+.containercakedetails
+{
+  background: hsla(0,0%,100%,.37);
+}
+.ingridentcontainer
+{
+  background: #eee;
+}
+.ingredentitem
+{
+  padding: 15px 5px;
+    text-align: center;
+    min-width: 160px;
+    height: 100px;
+}
+.btnaddtocart{
+  margin-top: 10rem;
+}
+.flex-even {
+  flex: 1;
 }

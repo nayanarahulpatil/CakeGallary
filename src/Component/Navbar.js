@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"
+
 export function Navbar (){
 
   var [title, settitle]=useState("Cake Gallary");
@@ -22,32 +23,22 @@ export function Navbar (){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <Link to="/" className="nav-link  my-sm-0">Home</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <Link to="/Product" className="nav-link  my-sm-0">Product</Link>
         </li>
         <li class="nav-item">
-        <Link to="/Addcackedetails" className="btn btn-info mr-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Add Cake Detail</Link>
+        <Link to="/Addcackedetails" className="nav-link  my-sm-0">Add Cake Detail</Link>
         </li>
       </ul>
       
       <form class="form-inline my-2 my-lg-0">
         <input id="inputsearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button onClick={btnsearch} class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+        <button onClick={btnsearch} class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
-     <Link to="/Signup"  className="btn btn-info  ml-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Sign up</Link>
+
+     <Link to="/Login"  className="btn btn-primary  ml-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Login</Link>
     </div>
   </nav>
   )
