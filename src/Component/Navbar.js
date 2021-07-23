@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState,useEffect} from "react"
 import { useHistory } from 'react-router-dom';
+
 export function Navbar (props){
 console.log(props)
   var [title, settitle]=useState("Cake Gallary");

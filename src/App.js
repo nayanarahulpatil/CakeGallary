@@ -7,11 +7,11 @@ import { Route } from "react-router-dom";
 import { Cakedetails } from './Component/CakeDetails';
 import Login from './Component/Login';
 import { Cakelist } from './Component/Cakelist';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 function App() {
   const [checklogindone, setchecklogindone] = useState(localStorage.token ? true : false);
 
-  const userlogindone = (userloginstatus) => {
+  const userlogindone = () => {
 
     setchecklogindone(true);
 
