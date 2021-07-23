@@ -1,5 +1,5 @@
 import axios from "axios"
-import {Component, PureComponent} from "react"
+import {PureComponent} from "react"
 import Loader from "react-loader-spinner"
 import { Navbar } from '../Component/Navbar';
 

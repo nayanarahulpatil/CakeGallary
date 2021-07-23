@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-var carimage = "unsplash.png";
+
 
 export function CakeCard(props) {
     const history = useHistory();
