@@ -60,5 +60,5 @@ export function Cakedetails(props) {
             </div>
             </div>
         </>
-    )
+    );
 }

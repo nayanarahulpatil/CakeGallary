@@ -1,4 +1,5 @@
 import {Component} from "react"
+import axios from "axios"
 import { Link  , withRouter} from "react-router-dom"
 import { Navbar } from '../Component/Navbar';
 class Login extends Component{
@@ -6,7 +7,8 @@ class Login extends Component{
         super()
         // initialising the state
         this.state = {
-            name:"Ashu"
+            name:"nayana"
+           
         }
     }
     user = {}
@@ -20,16 +22,27 @@ class Login extends Component{
     login = (event)=>{
         // updating the state
         event.preventDefault()
-
-        console.log(">>>>>>>>>>>>>>>" , this.props)
-        this.setState({
-            name:"Nayana",
-            errorMessage:"Invalid Credentials"
+        let urldata= "https://apifromashu.herokuapp.com/api/login";
+        axios({
+            method:"post",
+            url:urldata,
+            data:this.user
+        }).then((responce)=>{
+            console.log(responce);
+            if(responce.data.token)
+            {
+                this.props.userlogindone();
+                this.props.history.push("/");
+                localStorage.token=responce.data.token
+               
+            }
+            else{
+                alert("invalid creadential")
+            }
+        },(error)=>{
+          console.log(error);
         })
-        if(this.user.email=="nayana.sh@gmail.com" && this.user.password=="test123"){
-            this.props.history.push("/")
-        }
-       console.log("......................" , this.user) 
+      
     }
 
     render(){

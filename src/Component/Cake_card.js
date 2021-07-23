@@ -1,11 +1,14 @@
+import { useHistory } from 'react-router-dom';
 var carimage = "unsplash.png";
-export function CakeCard(props) {
 
-    function showcakedetail(){ 
-        props.history.push("/Cakedetails")
+export function CakeCard(props) {
+    const history = useHistory();
+    function showcakedetail(e){ 
+       
         //we can do it using serch query also where we pass data in url
         var url = "/Cakedetails?q="+props.data
-        props.history.push(url);
+        history.push(url);
+       
     }
     return (
         <>

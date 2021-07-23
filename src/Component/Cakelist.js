@@ -26,9 +26,9 @@ var cake1={
        
 <div className="container">
 <div className="d-flex  flex-xl-row justify-content-xl-between flex-column">
- <CakeCard data={cake1} history={props.history}/> 
- <CakeCard data={cake2}  history={props.history}/>
- <CakeCard data={cake3}  history={props.history}/>
+ <CakeCard data={cake1} /> 
+ <CakeCard data={cake2} />
+ <CakeCard data={cake3} />
 </div>
 </div>
         </>
