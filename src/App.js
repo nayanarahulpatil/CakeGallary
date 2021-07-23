@@ -21,7 +21,7 @@ function App() {
   return (
     <>
 
-      <Route exact path="/" component={() => (<Home checklogindone={checklogindone} />)} />
+      <Route exact path="/" render={() => (<Home checklogindone={checklogindone} />)} />
       <Route exact path="/Product" component={Cakelist} />
       <Route exact path="/Cakedetails" component={Cakedetails} />
       <Route exact path="/Addcackedetails" component={Addcackedetails} />

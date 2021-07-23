@@ -1,6 +1,6 @@
 
-import queryString from "query-string"
-import { Navbar } from '../Component/Navbar';
+import queryString from "query-string";
+
 export function Cakedetails(props) {
     var cakeimage = "cakelava.jpg"
     //here we used quersting
@@ -9,7 +9,7 @@ export function Cakedetails(props) {
    
     return (
         <>
-        <Navbar></Navbar>
+
         <div class="maincakedetails w-100 h-100">
         <div class="container  w-100 h-100 p-2 containercakedetails">
             <div class="d-flex m-3 ">
