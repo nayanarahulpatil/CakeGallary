@@ -1,16 +1,14 @@
 import axios from "axios"
 import {PureComponent} from "react"
-import Loader from "react-loader-spinner"
-import { Navbar } from '../Component/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import  Navbar  from '../Component/Navbar';
 
 class Signup extends PureComponent{
     constructor(){
         super()
         // initialising the state
-        this.state = {
-            name:"Ashu",
-         
-        }
+      
        
     }
  
@@ -28,64 +26,87 @@ class Signup extends PureComponent{
     signup = (event)=>{
        // updating the state
        event.preventDefault();
-       console.log("..........." , this.user) 
+        if(this.user.name==" " || this.user.name==undefined ){
+        alert("Enter Your name")
+    }
+
+     else if(this.user.email==" " || this.user.email==undefined )
+       {
+           alert("Enter Your Email Id")
+       }
+      else if(this.user.password==" " || this.user.password==undefined ){
+           alert("Enter Your password")
+       }
+      
+
+      else if(!this.user.password==" " || this.user.password==undefined  && !this.user.email==" " || this.user.email==undefined )
+       {
       let urldata= "https://apifromashu.herokuapp.com/api/register";
       axios({
           method:"post",
           url:urldata,
-          data:this.user
+          data:this.user  // we requrie structure like {email,name,password}
       }).then((responce)=>{
-          console.log(responce);
+          if(responce.data.message =="Please Provide Details")
+{
+    alert("Please Provide correct Details")
+}
+  else{
+    console.log(responce.data.message)
+    toast.success('Login Succsefully Done', {
+        position: "top-left",
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+        this.props.history.push("/")
+  }        
       },(error)=>{
-        console.log(error);
+        alert("invalid credential")
       })
     
-      this.props.history.push("/")
-     
-    }
+    
+
+ 
+    }}
 
     render(){
-        // var loader
-        // if(this.state.loading){
-        //      loader =  <Loader
-        //     type="ThreeDots"
-        //     color="#00BFFF"
-        //     height={100}
-        //     width={100} //3 secs
-        //   />
-        // }
-        // else{
-        //     loader = null
-        // }
        
         return (
             <>
             <Navbar></Navbar>
-            <div style={{width:"50%" , margin:"auto"}}>
-                {this.state.loading}
-               {this.state.loading &&  <Loader
-            type="ThreeDots"
-            color="#00BFFF"
-            
-           />}
-                <form class="mt-5">
+            <div className=" bg-light rounded p-5 mt-5 shadow" style={{width:"50%" , margin:"auto"}}>
+               
+                <form className="mt-1">
                 <h1>Signup Here</h1>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input onChange={this.handleName} type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" />
+                    <input onChange={this.handleName} type="text" className="form-control" aria-describedby="emailHelp" placeholder="Enter Name" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input onChange={this.handleEmail} type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" />
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input onChange={this.handleEmail} type="email" className="form-control"  aria-describedby="emailHelp" placeholder="Enter email" />
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input onChange={this.handlePassword} type="password" class="form-control"  placeholder="Password" />
+                    <input onChange={this.handlePassword} type="password" className="form-control"  placeholder="Password" />
                 </div>
                 <div>
-                <label className="errormessage">{this.state.errorMessage}</label>
-                <button onClick={this.signup} type="submit" class="btn btn-primary mt-3">Signup</button>
+                
+                <button onClick={this.signup} type="submit" className="btn btn-primary mt-3">Signup</button>
+                <ToastContainer
+                                position="top-left"
+                                autoClose={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                            />
                 </div>
             
                 </form>

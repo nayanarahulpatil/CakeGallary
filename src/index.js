@@ -7,13 +7,17 @@ import {
   BrowserRouter,
   Switch
 } from "react-router-dom";
-
-ReactDOM.render(
-  <BrowserRouter>
+import mystore from "./reduxstore/store"
+import {Provider} from 'react-redux'
+ ReactDOM.render(
+   <Provider store={mystore}>
+      <BrowserRouter>
   <Switch>
     
     <App />  </Switch>
       </BrowserRouter>
+   </Provider>
+ 
     ,
 
   document.getElementById('root')

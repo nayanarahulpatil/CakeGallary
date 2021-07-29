@@ -18,27 +18,27 @@ var user ={};
   }
     return(
         <>
-        <div class="container bg-dark my-1 p-5">
-                <div class="d-flex text-light">
-                    <div class="w-75 mx-auto ">
+        <div className="container bg-dark my-1 p-5">
+                <div className="d-flex text-light">
+                    <div className="w-75 mx-auto ">
          <form>
-                <h1 class="text-center">Signup Here</h1>
-                <div class="form-group">
+                <h1 className="text-center">Signup Here</h1>
+                <div className="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input onChange={handleName} type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" />
+                    <input onChange={handleName} type="text" className="form-control" aria-describedby="emailHelp" placeholder="Enter email" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input onChange={handleEmail} type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" />
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input onChange={handleEmail} type="email" className="form-control"  aria-describedby="emailHelp" placeholder="Enter email" />
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input onChange={handlePassword} type="password" class="form-control"  placeholder="Password" />
+                    <input onChange={handlePassword} type="password" className="form-control"  placeholder="Password" />
                 </div>
                 <div>
                 
-                <button type="submit" class="btn btn-primary" onClick ={signup}><Link to="/" style={{color:"white",textDecoration:"none"}}>Sign up</Link></button>
+                <button type="submit" className="btn btn-primary" onClick ={signup}><Link to="/" style={{color:"white",textDecoration:"none"}}>Sign up</Link></button>
                 </div>
                 </form>
                 </div>
