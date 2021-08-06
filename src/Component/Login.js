@@ -47,6 +47,7 @@ class Login extends Component {
             data: this.user
         }).then((responce) => {
             console.log(responce);
+
             if (responce.data.token) {
                 this.props.dispatch(
                     {

@@ -31,7 +31,7 @@ console.log(props)
 
     return(
      <>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-2 ">
       
     {props.name && <a href="#" className="navbar-brand" >wellcome {props.name}</a>}
     <button className="navbar-toggler nav " type="button " data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,6 +49,9 @@ console.log(props)
         <li className="nav-item">
         <Link to="/Addcackedetails" className="nav-link  my-sm-0">Add Cake Detail</Link>
         </li>
+        <li className="nav-item">
+        <Link to="/myorder" className="btn btn-light  my-sm-0 ml-3">My Orders</Link>
+        </li>
       </ul>
       
       <form className="form-inline my-2 my-lg-0">
@@ -60,7 +63,7 @@ console.log(props)
      { props.loginstatus ===true &&
      <form>
      <Link to="/" onClick={logoutuser} className="btn btn-danger ml-lg-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>logout</Link>
-     <Link to="/cartitem" className="btn btn-primary  ml-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Cart</Link>
+     <Link to="/cartitem" className="btn btn-primary  ml-2 my-sm-0" style={{color:"white",textDecoration:"none"}}>Cart<span className="rounded-circle ml-2">{props.cartcakeslist.length}</span></Link>
      </form>}
     </div>
   </nav>
@@ -70,6 +73,7 @@ console.log(props)
 }
 export default connect(function(state,props){
 return{
+  cartcakeslist: state["cartitemslist"]["cartitems"] || [],
   loginstatus:state["Showlogin"]["loginflag"],
   name:state["Showlogin"]["user"]&& state["Showlogin"]["user"]["name"]
 }

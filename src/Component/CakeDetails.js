@@ -11,11 +11,13 @@ import Loader from "react-loader-spinner"
 
     var [cakedetails , setCakedetails]  = useState({})
     var[loader,setloader]=useState(true)
+
     var datacake={name:cakedetails.name,
         cakeid:cakedetails.cakeid,
         price:cakedetails.price,
         weight:cakedetails.weight,
         image:cakedetails.image} 
+        
     useEffect(()=>{
         let apiurl = "https://apifromashu.herokuapp.com/api/cake/" + query
     
@@ -65,14 +67,14 @@ import Loader from "react-loader-spinner"
 
         <div className="maincakedetails w-100 h-100 ">
         <div className="container  w-100 h-100 p-2 containercakedetails mt-5">
-            <div className="d-flex m-3 ">
-                <div className="float-left  w-50">
+            <div className="d-flex flex-xl-row flex-column justify-content-xl-between align-self-center m-3 ">
+                <div className="float-left   cartimag ">
                 
-                <div className="p-3 rounded " >
+                <div className="p-3 rounded w-100" >
                 <img src={cakedetails.image}  className="card-img-top" alt="..." />
                 </div>
                 
-                <div className="m-2 d-flex flex-column flex-wrap p-4 ingridentcontainer">
+                <div className="m-2 d-flex flex-column  p-4 ingridentcontainer">
                     <h3>Ingrediant</h3>
                     {cakedetails.ingredients &&<ul className="d-flex flex-wrap justify-content-start align-items-center">
                     {cakedetails.ingredients.map((data)=>(
@@ -83,10 +85,10 @@ import Loader from "react-loader-spinner"
                 </div>
                 </div>
            
-            <div className=" text-center w-50 ">
+            <div className=" text-center cartdetailsholder ">
                
                <div className="h-100  d-flex justify-content-center align-self-center ">
-                    <div className="bg-secondar w-100 p-5 align-self-center"> 
+                    <div className="bg-secondar w-100 p-lg-5 align-self-center"> 
                     <h1>{cakedetails.name}</h1>
                     <StarRatings
           rating={cakedetails.ratings}

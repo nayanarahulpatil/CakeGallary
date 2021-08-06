@@ -9,6 +9,21 @@ import {
 } from "react-router-dom";
 import mystore from "./reduxstore/store"
 import {Provider} from 'react-redux'
+import axios from "axios"
+
+export var cart_axios = axios.create()
+
+
+
+
+
+cart_axios.interceptors.request.use((request)=>{
+ 
+  request.headers["authtoken"] = localStorage.token
+  return request
+ 
+})
+
  ReactDOM.render(
    <Provider store={mystore}>
       <BrowserRouter>

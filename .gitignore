@@ -23,3 +23,17 @@ requesObj - {}
 headers :{
     authtoken: token ewhich you received after logging in
 }
+
+/addcaketocart {cakeid}  post
+
+/removeonecakefromcart {cakeid}  post
+/removecakefromcart  {cakeid}  post
+Need headers to be sent for this
+
+/addcakeorder post requestobj — {name, address, area, city,pincode,phone,cakes,price} and headers - {authtoken}
+
+Guys please explore useReducer useSelector and useDisptach hooks
+
+
+/cakeorders post {}
+
